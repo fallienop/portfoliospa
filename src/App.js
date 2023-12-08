@@ -1,24 +1,60 @@
-import logo from './logo.svg';
+import { NavLink, BrowserRouter, Routes, Route } from 'react-router-dom';
+import Contact from './Components/Contact/Contact';
+import About from './Components/About/About';
+import Projects from './Components/ProjectSamples/ProjectS';
 import './App.css';
+function getClassName({ isActive }) {
+  if (isActive) {
+    return 'active';
+  }
+  return '';
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={<div><h1>Home</h1></div>}
+        />
+        <Route
+          path="/about"
+          element={<About />}
+        />
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
+        <Route
+          path="/projs"
+          element={<Projects />}
+        />
+      </Routes>
+
+      <ul>
+        <li>
+          <NavLink to="/" className={getClassName}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" className={getClassName}>
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" className={getClassName}>
+            Contact
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/projs" className={getClassName}>
+            Projects
+          </NavLink>
+        </li>
+      </ul>
+    </BrowserRouter>
   );
 }
 

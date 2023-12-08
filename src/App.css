@@ -13,6 +13,16 @@
   }
 }
 
+a {
+  text-decoration: none;
+}
+
+
+.active {
+  color: red; 
+} 
+.active {color: cadetblue;}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
