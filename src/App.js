@@ -13,26 +13,8 @@ function getClassName({ isActive }) {
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={<div><h1>Home</h1></div>}
-        />
-        <Route
-          path="/about"
-          element={<About />}
-        />
-        <Route
-          path="/contact"
-          element={<Contact />}
-        />
-        <Route
-          path="/projs"
-          element={<Projects />}
-        />
-      </Routes>
 
-      <ul>
+<ul>
         <li>
           <NavLink to="/" className={getClassName}>
             Home
@@ -54,6 +36,27 @@ function App() {
           </NavLink>
         </li>
       </ul>
+
+      <Routes>
+        <Route
+          path="/"
+          element={<div><h1>Home</h1></div>}
+        />
+        <Route
+          path="/about"
+          element={<About />}
+        />
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
+        <Route
+          path="/projs"
+          element={<Projects />}
+        />
+      </Routes>
+
+   
     </BrowserRouter>
   );
 }
